@@ -1,0 +1,125 @@
+.header {
+	background-image: url('../images/img-desktop/headaer-deskt.jpg');
+	background-color: black;
+	@include bg-img();
+	min-height: 100vh;
+	padding-top: 40px;
+	@media screen and (min-height: 992px){
+		min-height: 700px;
+	}
+	@media screen and (max-width: 475px){
+	   background-image: url('../images/img-mobile/header-mobile.webp');
+	}
+
+
+	/* .header__inner */
+	&__inner {
+		min-height: 100vh;
+		display: flex;
+		flex-direction:column;
+		@media screen and (min-height: 992px){
+			min-height: 700px;
+		}
+		@media screen and (max-height: 992px){
+		   padding-top: 20px;
+		}
+	}
+}
+
+
+.cap {
+	@include d-flex(space-between ,  center);
+	@media screen and (max-width: 475px){
+			justify-content: center;
+	}
+
+
+	/* .cap__logo */
+	&__logo {
+		@extend .logo;
+      @media screen and (max-width: 475px){
+			display: none;
+	   }
+	}
+	
+	/* .cap__wrap-registration */
+	&__wrap-registration {
+	}
+
+	/* .cap__sigin-in */
+	&__sigin-in {
+      color: $colorText;
+		font-size: 14px;
+      line-height: 17px;
+		font-family:$fontFamily-3 !important;
+      background-color: transparent;
+      border:none;
+	}
+
+	/* .cap__sigin-up */
+	&__sigin-up {
+		@extend 	.cap__sigin-in;
+      padding: .6em 1.1em;
+      margin-left: 19px;
+		border: 2px solid $Background !important;
+      border-radius: 40px;
+      vertical-align: middle;	
+	}
+}
+
+.contant {
+	@include d-flex(center,center)
+	flex: 1 1;
+	/* .contant__inner */
+	&__inner {
+		display: flex;
+		flex-direction:column;
+	}
+	&__logo{
+		@extend .logo;
+		display: none;
+		 @media screen and (max-width: 475px){
+			display: block;
+			text-align: center;
+	   }
+	}
+	/* .contant__title */
+	&__title {
+		font-size: 52px;
+		line-height: 63px;
+		text-align: center;
+		margin: 26px 0 35px;
+		color: $colorText;	
+		@media screen and (max-width: 475px){
+		   font-size: 30px;
+		   line-height: 36px;
+		   margin-bottom: 15px;
+		}
+
+	}
+
+	/* .contant__subtitle */
+	&__subtitle {
+		font-family: $fontFamily-3;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 24px;
+		text-align: center;
+		color: #F7F3F2;
+		@media screen and (max-width: 475px){
+			margin: 0 0 15px;
+		}
+	}
+	/* .contant__link */
+	&__link {
+		@extend .btn;
+		background: $BackgroundButton;
+      padding: .75em 1.2em;
+		color: $colorButton-1;
+		align-self: center;
+		margin: 33px 0;
+		@media screen and (max-width: 475px){
+			margin-top: 0;
+		}
+	}
+}
